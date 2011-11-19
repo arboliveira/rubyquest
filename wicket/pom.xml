@@ -1,0 +1,81 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<artifactId>rubyquest</artifactId>
+		<groupId>br.com.arbo.rubyquest</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>rubyquest-wicket</artifactId>
+	<name>Wicket Application and Pages</name>
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rubyquest-data-model</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rubyquest-thisisnotatrueending</artifactId>
+		</dependency>
+		<!-- DEPENDENCIES FOR GENERATE-RESOURCES MVN EXEC DATA-DOWNLOAD. MAKESHIFT TEST 
+			SCOPE SO THEY ARE NOT INCLUDED AS TRANSITIVE. YOU DON'T WANT TO SHIP THESE WITH THE 
+			WEBSITE. -->
+		<!-- GENERATE-RESOURCES BEGIN -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>rubyquest-data-download</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- GENERATE-RESOURCES END -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.4.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<executable>java</executable>
+					<classpathScope>test</classpathScope>
+					<arguments>
+						<argument>-classpath</argument>
+						<classpath />
+						<argument>rubyquest.main.Main</argument>
+					</arguments>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>generate-resources</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
