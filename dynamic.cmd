@@ -1,2 +1,1 @@
-mvn install
-mvn exec:exec --projects dynamic
+mvn install && mvn exec:exec --projects dynamic

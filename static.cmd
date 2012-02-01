@@ -1,2 +1,1 @@
-mvn install
-mvn exec:exec --projects static
+mvn install && mvn exec:exec --projects static
