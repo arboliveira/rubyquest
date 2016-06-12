@@ -10,8 +10,8 @@ import rubyquest.offline.Images;
 
 public class Bonus extends WebPage {
 
-	public static final String FutureFamilyPhoto = "http://1d4chan.org/images/4/4f/FutureFamilyPhoto.png";
-	public static final String Angry_Ruby = "http://1d4chan.org/images/e/e2/Angry_Ruby.jpg";
+	public static final String FutureFamilyPhoto = "https://1d4chan.org/images/4/4f/FutureFamilyPhoto.png";
+	public static final String Angry_Ruby = "https://1d4chan.org/images/e/e2/Angry_Ruby.jpg";
 
 	public static PageSpec newPageSpec() {
 		return new SimplePageSpec(Bonus.class);
