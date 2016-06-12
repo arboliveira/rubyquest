@@ -12,6 +12,8 @@ import org.apache.wicket.model.Model;
 
 public class Credits extends WebPage {
 
+	public static final String TGWEAVER = "TGWeaver";
+
 	public static PageSpec newSpec(final int i) {
 		return new NamedPageSpec(htmlfile(i), Credits.class);
 	}
@@ -109,12 +111,12 @@ public class Credits extends WebPage {
 	}
 
 	private static final Credit[] credits = {
-			new Credit("Story by", "Weaver"),
-			new Credit("Art by", "Weaver"),
+			new Credit("Story by", TGWEAVER),
+			new Credit("Art by", TGWEAVER),
 			new Credit("Sequenced by", "Arbo"),
 			new Credit("Special thanks", "The /tg/ community" + "\n"
 					+ "thisisnotatrueending"),
-			new Credit("Written and directed by", "Weaver") };
+			new Credit("Written and directed by", TGWEAVER) };
 
 	private final int credit;
 
